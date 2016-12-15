@@ -3,12 +3,13 @@ import md5 from 'md5';
 
 import Avatar from './avatar';
 import Email from './email';
+import Span from './span';
 
 export default class Gravatar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'someone@example.com',
+      email: 'email@example.com',
       src: 'http://placehold.it/200x200'
     }
   }
@@ -29,6 +30,7 @@ export default class Gravatar extends React.Component {
         <h4>Avatar for:</h4>
         <Avatar email={this.state.email} src={this.state.src}/>
         <Email fetchGravatar={this.updateGravatar.bind(this)} handleEmailChange={this.updateEmail.bind(this)}/>
+        <Span/>
       </div>
     );
   }

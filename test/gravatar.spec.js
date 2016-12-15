@@ -6,6 +6,7 @@ import md5 from 'md5';
 import Gravatar from '../lib/gravatar';
 import Avatar from '../lib/avatar';
 import Email from '../lib/email';
+import Span from '../lib/span';
 
 describe('<Gravatar />', () => {
   it('contains an <Avatar/> component', function () {
@@ -16,6 +17,11 @@ describe('<Gravatar />', () => {
   it('contains an <Email/> component', function () {
     const wrapper = mount(<Gravatar/>);
     expect(wrapper.find(Email)).to.have.length(1);
+  });
+  
+  it('contains an <Span/> component', function () {
+    const wrapper = mount(<Gravatar/>);
+    expect(wrapper.find(Span)).to.have.length(1);
   });
 
   it('should have an initial email state', function () {
